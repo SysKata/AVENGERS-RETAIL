@@ -1,0 +1,77 @@
+
+hive> create database retail;
+OK
+Time taken: 1.168 seconds
+
+hive> create external table retail.ventas(
+    > InvoiceNo int,
+    > StockCode int,
+    > Description string,
+    > Quantity int,
+    > InvoiceDate string,
+    > UnitPrice string,
+    > CustomerID string,
+    > Country string
+    > )
+    > COMMENT 'TABLA de VENTAS SEPTIMO GRUPO'
+    > ROW FORMAT DELIMITED
+    > FIELDS TERMINATED BY ','
+    > LINES TERMINATED BY '\n'
+    > STORED AS TEXTFILE
+    > LOCATION '/datalake/landing/ventasretail';
+OK
+Time taken: 0.238 seconds
+hive> select * from retail.ventas limit 50;
+OK
+NULL    NULL    Description     NULL    InvoiceDate     UnitPrice       CustomerID      Country
+537037  22114   HOT WATER BOTTLE TEA AND SYMPATHY       8       2010-12-05 10:03:00     3.95    17243.0 United Kingdom
+537037  21485   RETROSPOT HEART HOT WATER BOTTLE        6       2010-12-05 10:03:00     4.95    17243.0 United Kingdom
+537037  22835   HOT WATER BOTTLE I AM SO POORLY 3       2010-12-05 10:03:00     4.65    17243.0 United Kingdom
+537037  NULL    RED WOOLLY HOTTIE WHITE HEART.  6       2010-12-05 10:03:00     3.75    17243.0 United Kingdom
+537037  NULL    KNITTED UNION FLAG HOT WATER BOTTLE     6       2010-12-05 10:03:00     3.75    17243.0 United Kingdom
+537037  22158   3 HEARTS HANGING DECORATION RUSTIC      8       2010-12-05 10:03:00     2.95    17243.0 United Kingdom
+537037  22633   HAND WARMER UNION JACK  24      2010-12-05 10:03:00     2.1     17243.0 United Kingdom
+537037  22988   SOLDIERS EGG CUP        12      2010-12-05 10:03:00     1.25    17243.0 United Kingdom
+537037  NULL    WOODEN FRAME ANTIQUE WHITE      6       2010-12-05 10:03:00     2.95    17243.0 United Kingdom
+537037  NULL    4 IVORY DINNER CANDLES SILVER FLOCK     11      2010-12-05 10:03:00     2.55    17243.0 United Kingdom
+537037  21034   REX CASH+CARRY JUMBO SHOPPER    2       2010-12-05 10:03:00     0.95    17243.0 United Kingdom
+537038  21523   DOORMAT FANCY FONT HOME SWEET HOME      10      2010-12-05 10:12:00     6.75    15465.0 United Kingdom
+537038  21524   DOORMAT SPOTTY HOME SWEET HOME  3       2010-12-05 10:12:00     7.95    15465.0 United Kingdom
+537038  22086   PAPER CHAIN KIT 50'S CHRISTMAS  80      2010-12-05 10:12:00     2.55    15465.0 United Kingdom
+537038  21754   HOME BUILDING BLOCK WORD        3       2010-12-05 10:12:00     5.95    15465.0 United Kingdom
+537038  21755   LOVE BUILDING BLOCK WORD        3       2010-12-05 10:12:00     5.95    15465.0 United Kingdom
+537038  22083   PAPER CHAIN KIT RETROSPOT       10      2010-12-05 10:12:00     2.95    15465.0 United Kingdom
+537038  22423   REGENCY CAKESTAND 3 TIER        16      2010-12-05 10:12:00     10.95   15465.0 United Kingdom
+NULL    22854   CREAM SWEETHEART EGG HOLDER     -1      2010-12-05 10:25:00     4.95    15708.0 United Kingdom
+NULL    20936   FORKED CACTUS CANDLE    -1      2010-12-05 10:25:00     2.95    15708.0 United Kingdom
+NULL    85175   CACTI T-LIGHT CANDLES   -1      2010-12-05 10:25:00     0.42    15708.0 United Kingdom
+537040  22423   REGENCY CAKESTAND 3 TIER        48      2010-12-05 10:27:00     10.95   13089.0 United Kingdom
+537040  84949   SILVER HANGING T-LIGHT HOLDER   144     2010-12-05 10:27:00     1.45    13089.0 United Kingdom
+537041  22726   ALARM CLOCK BAKELIKE GREEN      4       2010-12-05 10:36:00     3.75    16033.0 United Kingdom
+537041  22730   ALARM CLOCK BAKELIKE IVORY      4       2010-12-05 10:36:00     3.75    16033.0 United Kingdom
+537041  22727   ALARM CLOCK BAKELIKE RED        4       2010-12-05 10:36:00     3.75    16033.0 United Kingdom
+537041  22728   ALARM CLOCK BAKELIKE PINK       3       2010-12-05 10:36:00     3.75    16033.0 United Kingdom
+537041  22358   KINGS CHOICE TEA CADDY  1       2010-12-05 10:36:00     2.95    16033.0 United Kingdom
+537041  21876   POTTERING MUG   1       2010-12-05 10:36:00     1.25    16033.0 United Kingdom
+537041  21868   POTTING SHED TEA MUG    1       2010-12-05 10:36:00     1.25    16033.0 United Kingdom
+537041  21877   HOME SWEET HOME MUG     2       2010-12-05 10:36:00     1.25    16033.0 United Kingdom
+537041  37370   RETRO COFFEE MUGS ASSORTED      2       2010-12-05 10:36:00     1.25    16033.0 United Kingdom
+537041  22652   TRAVEL SEWING KIT       4       2010-12-05 10:36:00     1.65    16033.0 United Kingdom
+537041  22507   MEMO BOARD RETROSPOT  DESIGN    2       2010-12-05 10:36:00     4.95    16033.0 United Kingdom
+537041  85054   FRENCH ENAMEL POT W LID 2       2010-12-05 10:36:00     2.95    16033.0 United Kingdom
+537041  85055   FRENCH ENAMEL UTENSIL HOLDER    2       2010-12-05 10:36:00     3.75    16033.0 United Kingdom
+537041  21165   BEWARE OF THE CAT METAL SIGN    6       2010-12-05 10:36:00     1.69    16033.0 United Kingdom
+537041  22666   RECIPE BOX PANTRY YELLOW DESIGN 2       2010-12-05 10:36:00     2.95    16033.0 United Kingdom
+537041  22667   RECIPE BOX RETROSPOT    2       2010-12-05 10:36:00     2.95    16033.0 United Kingdom
+537041  NULL    WAKE UP COCKEREL CALENDAR SIGN  1       2010-12-05 10:36:00     3.75    16033.0 United Kingdom
+537041  22630   DOLLY GIRL LUNCH BOX    1       2010-12-05 10:36:00     1.95    16033.0 United Kingdom
+537041  22629   SPACEBOY LUNCH BOX      1       2010-12-05 10:36:00     1.95    16033.0 United Kingdom
+537041  22955   36 FOIL STAR CAKE CASES         1       2010-12-05 10:36:00     2.1     16033.0 United Kingdom
+537041  22956   36 FOIL HEART CAKE CASES        1       2010-12-05 10:36:00     2.1     16033.0 United Kingdom
+537041  22426   ENAMEL WASH BOWL CREAM  1       2010-12-05 10:36:00     3.75    16033.0 United Kingdom
+537041  22427   ENAMEL FLOWER JUG CREAM 1       2010-12-05 10:36:00     5.95    16033.0 United Kingdom
+537041  22193   RED DINER WALL CLOCK    1       2010-12-05 10:36:00     8.5     16033.0 United Kingdom
+537041  NULL    ENAMEL BLUE RIM COFFEE CONTAINER        1       2010-12-05 10:36:00     2.1     16033.0 United Kingdom
+537041  35241   ENAMEL BLUE RIM BISCUIT BIN     1       2010-12-05 10:36:00     4.95    16033.0 United Kingdom
+Time taken: 1.168 seconds, Fetched: 50 row(s)
+hive>
